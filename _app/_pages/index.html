@@ -8,21 +8,42 @@ thumb_force_logo: true
 
 <!-- Article wrapper, limit width -->
 <article>
-
   <!-- Post title -->
   <header>
-
     <h1 class="image-title">
       Almace Scaffolding
       <img src="{{ amsf_user_assets }}/svg/amsf.svg">
     </h1>
 
-    <h2 class="sub-title">A super-fast Jekyll framework fighting against the website obesity.</h2>
+    <h2 class="sub-title">Informática, Informatik, Informatique, Информатика, 信息技术</h2>
 
-    <small>a.k.a. <b>AMSF</b>&#x30FB;ver. <b class="amsf-version">2.0.24</b>&#x30FB;view it on <a href="https://github.com/sparanoid/almace-scaffolding">GitHub</a></small>
+    <small>Tomas Darquier's Blog &#x30FB; </b>check it on <a href="https://github.com/TomasDarquier/tomasdarquier.github.io">GitHub</a></small>
   </header>
 
-  <div class="page-content">
+    <div class="page-content">
+    {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+      {% for year in posts_by_year %}
+      <div style="margin-top: 2em; margin-bottom: 0.3em; font-size: 1.17em; font-weight: bold; line-height: 1.2;">
+      <a class="year">{{ year.name }}</a>
+      </div>
+        {% assign posts_by_month = year.items | group_by_exp:"post", "post.date | date: '%B'" %}
+        {% for month in posts_by_month %}
+        <div style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <a href="#" style="text-decoration: none; color: inherit;">{{ month.name }}</a>
+        </div>
+        {% for post in month.items %}
+                {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
+                {% if post.tags.size > 0 %}
+                  <span class="post-tags">
+                    {% for tag in post.tags %}
+                      <small class="tag">{{ tag }}</small>
+                    {% endfor %}
+                  </span>
+                {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+
     <h2>Getting Started</h2>
     {% for post in site.tags.getting-started %}
       {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
@@ -49,3 +70,23 @@ thumb_force_logo: true
     {% endfor %}
   </div>
 </article>
+
+<style>
+  .post-tags {
+    display: inline-flex;
+    gap: 0.5em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
+  .year {
+    margin-top: 3em;
+  }
+  .tag {
+    font-size: 0.7em;
+    padding: 0.2em 0.6em;
+    border-radius: 1em;
+    background: rgba(0, 0, 0, 0.20);
+    color: grey;
+    text-transform: lowercase;
+  }    
+</style>  

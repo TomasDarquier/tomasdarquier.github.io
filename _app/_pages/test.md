@@ -1,14 +1,13 @@
 ---
 layout: page
-title: About
-permalink: /example-about/
-desc: 關於・について・Introduction
-hidden: true
+title: Test
+permalink: /test/
+desc: 示例頁面・サンプルページ・Example Page
 ---
 
-This is an Curtana theme example About page.
+This is an example About page.
 
-Sparanoid is a design studio operated by Tunghsiao Liu. You can ping me on [Twitter](https://twitter.com/tunghsiao) or send correspondence to [t@sparanoid.com](mailto:t@sparanoid.com).
+Sparanoid is a design and development studio. It is available for freelance work as well as consulting. You can send email to [t@sparanoid.com](mailto:t@sparanoid.com).
 
 ## Colophon
 
