@@ -9,6 +9,7 @@ PROTEGER=(
   ".git"
   ".gitignore"
   "node_modules"
+  "readme.md"
   "_amsf"
   "publish.sh"  # el nombre del script actual
 )
