@@ -98,8 +98,8 @@ description:    Super-fast Jekyll framework
 # the production site URL is https://sparanoid.com/my-project/, set `baseurl` to
 # `/my-project`, without trailing slash.
 #
-# Default:      ""
-baseurl:        /lab/amsf
+Default:      ""
+#baseurl:        /lab/amsf
 
 # Flatten base
 #
