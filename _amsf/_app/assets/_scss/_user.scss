@@ -27,9 +27,21 @@
 
 // EXAMPLE: amsf.github.io custom appearance
 :root {
-  --code-color-h: calc(var(--link-color-h) + 10);
-  --code-color-s: calc(var(--link-color-s) * .2 + 40%);
+//  --code-color-h: calc(var(--link-color-h) + 10);
+//  --code-color-s: calc(var(--link-color-s) * .2 + 40%);
+--text-color-h: 0;
+--text-color-s: 0%;
+--text-color-l: 12%;
+
+--link-color-h: 240;
+--link-color-s: 1%;
+--link-color-l: 50%;
+
+--bg-color-h: 0;
+--bg-color-s: 0%;
+--bg-color-l: 98%;
 }
+
 
 .content .sub-title {
   font-size: 108%;

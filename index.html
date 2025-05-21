@@ -130,25 +130,30 @@
     <small>Tomas Darquier's Blog &#x30FB; </b>check it on <a href="https://github.com/TomasDarquier/tomasdarquier.github.io">GitHub</a></small>
   </header>
 
-  <!-- Search -->
-  <div class="search-container">
-    <svg class="search-icon" viewBox="0 0 24 24">
-      <path fill="currentColor"
-        d="M9.5 3a6.5 6.5 0 015.196 10.436l4.59 4.59a1 1 0 01-1.414 1.414l-4.59-4.59A6.5 6.5 0 119.5 3zm0 2a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
-    </svg>
-    <input type="text" id="searchInput" placeholder="Buscar artículos...">
+<div class="blog-header-container">
+  <h1 class="blog-posts-heading"></h1>
+  <div class="search-wrapper">
+    <button class="search-toggle" onclick="toggleSearch()">
+      <svg viewBox="0 0 24 24" class="search-toggle-icon">
+        <path fill="currentColor"
+          d="M9.5 3a6.5 6.5 0 015.196 10.436l4.59 4.59a1 1 0 01-1.414 1.414l-4.59-4.59A6.5 6.5 0 119.5 3zm0 2a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+      </svg>
+    </button>
+    <input type="text" id="searchInput" class="search-input collapsed" placeholder="Buscar artículos...">
   </div>
+</div>
+
 
   <div class="page-content" id="blogContainer">
     
     
       <div class="year-section">
-        <div class="year-heading" style="margin-top: 2em; margin-bottom: 0.3em; font-size: 1.17em; font-weight: bold; line-height: 1.2;">
+        <div class="year-heading">
           <a class="year">2025</a>
         </div>
         
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">May</a>
           </div>
           
@@ -183,7 +188,7 @@
             </div>
           
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">April</a>
           </div>
           
@@ -217,12 +222,12 @@
       </div>
     
       <div class="year-section">
-        <div class="year-heading" style="margin-top: 2em; margin-bottom: 0.3em; font-size: 1.17em; font-weight: bold; line-height: 1.2;">
+        <div class="year-heading">
           <a class="year">2018</a>
         </div>
         
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">July</a>
           </div>
           
@@ -250,12 +255,12 @@
       </div>
     
       <div class="year-section">
-        <div class="year-heading" style="margin-top: 2em; margin-bottom: 0.3em; font-size: 1.17em; font-weight: bold; line-height: 1.2;">
+        <div class="year-heading">
           <a class="year">2017</a>
         </div>
         
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">January</a>
           </div>
           
@@ -309,12 +314,12 @@
       </div>
     
       <div class="year-section">
-        <div class="year-heading" style="margin-top: 2em; margin-bottom: 0.3em; font-size: 1.17em; font-weight: bold; line-height: 1.2;">
+        <div class="year-heading">
           <a class="year">2016</a>
         </div>
         
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">November</a>
           </div>
           
@@ -339,7 +344,7 @@
             </div>
           
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">June</a>
           </div>
           
@@ -370,7 +375,7 @@
             </div>
           
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">March</a>
           </div>
           
@@ -404,12 +409,12 @@
       </div>
     
       <div class="year-section">
-        <div class="year-heading" style="margin-top: 2em; margin-bottom: 0.3em; font-size: 1.17em; font-weight: bold; line-height: 1.2;">
+        <div class="year-heading">
           <a class="year">2015</a>
         </div>
         
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">August</a>
           </div>
           
@@ -437,12 +442,12 @@
       </div>
     
       <div class="year-section">
-        <div class="year-heading" style="margin-top: 2em; margin-bottom: 0.3em; font-size: 1.17em; font-weight: bold; line-height: 1.2;">
+        <div class="year-heading">
           <a class="year">2014</a>
         </div>
         
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">June</a>
           </div>
           
@@ -707,7 +712,7 @@
             </div>
           
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">May</a>
           </div>
           
@@ -738,7 +743,7 @@
             </div>
           
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">April</a>
           </div>
           
@@ -769,7 +774,7 @@
             </div>
           
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">February</a>
           </div>
           
@@ -874,7 +879,7 @@
             </div>
           
         
-          <div class="month-heading" style="margin-block: 0.3em; font-size: 0.57em; font-weight: bold; line-height: 1.2;">
+          <div class="month-heading">
             <a href="#" style="text-decoration: none; color: inherit;">January</a>
           </div>
           
@@ -911,60 +916,181 @@
 </article>
 
 <style>
-  .post-tags {
-    display: inline-flex;
-    gap: 0.5em;
-    margin-left: 1em;
-    margin-bottom: 1em;
-  }
+.blog-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5em 0 1em;
+}
 
-  .tag {
-    font-size: 0.7em;
-    padding: 0.2em 0.6em;
-    border-radius: 1em;
-    background: rgba(0, 0, 0, 0.20);
-    color: grey;
-    text-transform: lowercase;
-  }
+.blog-posts-heading {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 700;
+  color: grey;
+  letter-spacing: -0.02em;
+}
 
-  .post-item.hidden {
-    display: none;
-  }
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: flex-end;
+}
 
-  .search-container {
-    position: relative;
-    margin: 1em 0;
-    max-width: 400px;
-  }
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--text-color-h), var(--text-color-s), var(--text-color-l));
+}
 
-  .search-container input:focus {
-    outline: none;
-    border-color: #666;
-    box-shadow: 0 0 0 2px rgba(100, 100, 255, 0.2);
-  }
+.search-toggle-icon {
+  width: 20px;
+  height: 20px;
+}
 
-  .search-container input {
-    color: #222;
+.search-input {
+  transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  color: hsl(var(--text-color-h), var(--text-color-s), var(--text-color-l));
+  background-color: hsl(var(--bg-color-h), var(--bg-color-s), var(--bg-color-l));
+  width: 200px;
+  opacity: 1;
+}
+
+.search-input.collapsed {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  border: none;
+  pointer-events: none;
+}
+
+.post-tags {
+  display: inline-flex;
+  gap: 0.5em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.blog-title {
+  font-size: 0.7em;
+  padding: 0.2em 0.6em;
+  color: grey;
+}
+
+.tag {
+  font-size: 0.7em;
+  padding: 0.2em 0.6em;
+  border-radius: 1em;
+  background: rgba(0, 0, 0, 0.20);
+  color: grey;
+  text-transform: lowercase;
+}
+
+.year-heading {
+  margin-top: 2em;
+  margin-bottom: 0.3em;
+  font-size: 1.17em;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #2c3e50;
+}
+
+.month-heading {
+  margin-block: 0.3em;
+  font-size: 0.57em;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.post-item {
+  font-weight: 500;
+  margin-bottom: 0.8em;
+}
+
+.post-item a {
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.post-item a:hover {
+  color: grey;
+}
+
+.post-item.hidden {
+  display: none;
+}
+
+.search-container {
+  position: relative;
+  margin: 1em 0;
+  max-width: 400px;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 0 2px rgba(100, 100, 255, 0.2);
+}
+
+.search-container input {
+  color: #222;
+  width: 100%;
+  padding: 10px 10px 10px 36px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+@media (max-width: 640px) {
+  .blog-header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+  
+  .search-wrapper {
     width: 100%;
-    padding: 10px 10px 10px 36px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    font-size: 1em;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    justify-content: flex-start;
   }
-
-  .search-icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    width: 16px;
-    height: 16px;
-    transform: translateY(-50%);
-    color: #888;
-  }
+}
 </style>
 
 <script>
+    function toggleSearch() {
+  const input = document.getElementById('searchInput');
+  input.classList.toggle('collapsed');
+  if (!input.classList.contains('collapsed')) {
+    input.focus();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('searchInput');
   const posts = document.querySelectorAll('.post-item');
@@ -1006,7 +1132,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-
 
 </main>
 <!-- Footer section -->
