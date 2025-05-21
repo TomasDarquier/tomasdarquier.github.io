@@ -50,12 +50,9 @@ $breakpoint-xs: 400px !default;
   --nav-item-space: 1.4vmax;
 
   // Color - text color
-  --text-color-h: 0;
-  --text-color-s: 0%;
-  --text-color-l: 12%;
-//  --text-color-h: 318;
-//  --text-color-s: 30%;
-//  --text-color-l: 10%;
+  --text-color-h: 318;
+  --text-color-s: 30%;
+  --text-color-l: 10%;
   --text-color-hsl: var(--text-color-h), var(--text-color-s), var(--text-color-l);
 
   --text-color: hsl(var(--text-color-hsl));
@@ -76,11 +73,8 @@ $breakpoint-xs: 400px !default;
   --text-color-dark: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .9));
 
   // Color - link color
-//  --link-color-h: 318;
-//  --link-color-s: 100%;
-//  --link-color-l: 50%;
-  --link-color-h: 240;
-  --link-color-s: 1%;
+  --link-color-h: 318;
+  --link-color-s: 100%;
   --link-color-l: 50%;
   --link-color-hsl: var(--link-color-h), var(--link-color-s), var(--link-color-l);
 
@@ -102,13 +96,9 @@ $breakpoint-xs: 400px !default;
   --link-color-dark: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .9));
 
   // Color - background color
-//  --bg-color-h: 318;
-//  --bg-color-s: 30%;
-//  --bg-color-l: 100%;
-
-  --bg-color-h: 0;
-  --bg-color-s: 0%;
-  --bg-color-l: 98%;
+  --bg-color-h: 318;
+  --bg-color-s: 30%;
+  --bg-color-l: 100%;
   --bg-color-hsl: var(--bg-color-h), var(--bg-color-s), var(--bg-color-l);
 
   --bg-color: hsl(var(--bg-color-hsl));
