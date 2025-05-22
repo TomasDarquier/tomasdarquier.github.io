@@ -5,7 +5,9 @@ thumb_force_logo: true
 ---
 
 {%- include amsf/core -%}
-
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <!-- Article wrapper, limit width -->
 <article>
   <!-- Post title -->
@@ -15,9 +17,12 @@ thumb_force_logo: true
       <img src="{{ amsf_user_assets }}/svg/amsf.svg">
     </h1>
 
-    <h2 class="sub-title">Informática, Informatik, Informatique, Информатика, 信息技术</h2>
+    <h2 class="sub-title">Informática, Informatik, Informatique, Информатика, 信息技术   <i class="fa fa-heart" style="font-size:36px;color:red"></i></h2>
 
-    <small>Tomas Darquier's Blog &#x30FB; </b>check it on <a href="https://github.com/TomasDarquier/tomasdarquier.github.io">GitHub</a></small>
+    <small>Tomas Darquier's Blog &#x30FB; </b>check the <a href="https://github.com/TomasDarquier/tomasdarquier.github.io">repo</a></small>
+    <small><a href="https://github.com/TomasDarquier/tomasdarquier.github.io">Linkedin</a>
+        - </b><a href="https://github.com/TomasDarquier/tomasdarquier.github.io">GitHub</a>
+        - </b><a href="https://github.com/TomasDarquier/tomasdarquier.github.io">About Me</a></small> 
   </header>
 
 <div class="blog-header-container">
@@ -29,10 +34,13 @@ thumb_force_logo: true
           d="M9.5 3a6.5 6.5 0 015.196 10.436l4.59 4.59a1 1 0 01-1.414 1.414l-4.59-4.59A6.5 6.5 0 119.5 3zm0 2a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
       </svg>
     </button>
-    <input type="text" id="searchInput" class="search-input collapsed" placeholder="Buscar artículos...">
+    <input type="text" id="searchInput" class="search-input collapsed" placeholder="Search articles or tags...">
+    <div class="language-selector">
+      <button id="languageEN" class="language-button active" onclick="setLanguage('en')">EN</button>
+      <button id="languageES" class="language-button" onclick="setLanguage('es')">ES</button>
+    </div>
   </div>
 </div>
-
 
   <div class="page-content" id="blogContainer">
     {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
@@ -47,7 +55,7 @@ thumb_force_logo: true
             <a href="#" style="text-decoration: none; color: inherit;">{{ month.name }}</a>
           </div>
           {% for post in month.items %}
-            <div class="post-item">
+            <div class="post-item" data-title="{{ post.title }}" data-english-title="{{ post.english-title }}" data-tags="{% for tag in post.tags %}{{ tag | downcase }} {% endfor %}">
               {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
               {% if post.tags.size > 0 %}
               <span class="post-tags">
@@ -61,7 +69,7 @@ thumb_force_logo: true
         {% endfor %}
       </div>
     {% endfor %}
-
+  </div>
 </article>
 
 <style>
@@ -99,8 +107,8 @@ thumb_force_logo: true
 }
 
 .search-toggle-icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .search-input {
@@ -122,6 +130,33 @@ thumb_force_logo: true
   padding: 0;
   border: none;
   pointer-events: none;
+}
+
+.language-selector {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.language-button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: hsl(var(--text-color-h), var(--text-color-s), var(--text-color-l));
+  background-color: hsl(var(--bg-color-h), var(--bg-color-s), var(--bg-color-l));
+  font-size: 0.9em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.language-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.language-button.active {
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
 }
 
 .post-tags {
@@ -172,7 +207,7 @@ thumb_force_logo: true
 
 .post-item a {
   font-weight: 500;
-  color: white;
+  color: --text-color;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -232,7 +267,10 @@ thumb_force_logo: true
 </style>
 
 <script>
-    function toggleSearch() {
+// Set English as the default language
+let currentLanguage = localStorage.getItem('blogLanguage') || 'en';
+
+function toggleSearch() {
   const input = document.getElementById('searchInput');
   input.classList.toggle('collapsed');
   if (!input.classList.contains('collapsed')) {
@@ -240,44 +278,100 @@ thumb_force_logo: true
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('blogLanguage', currentLanguage);
+  updateLanguageUI();
+  updatePostTitles();
+  updateSearchPlaceholder();
+  // Re-run search to update results in new language
   const searchInput = document.getElementById('searchInput');
+  filterPosts(searchInput.value);
+}
+
+function updateLanguageUI() {
+  const enButton = document.getElementById('languageEN');
+  const esButton = document.getElementById('languageES');
+  
+  if (currentLanguage === 'en') {
+    enButton.classList.add('active');
+    esButton.classList.remove('active');
+  } else {
+    enButton.classList.remove('active');
+    esButton.classList.add('active');
+  }
+}
+
+function updateSearchPlaceholder() {
+  const searchInput = document.getElementById('searchInput');
+  searchInput.placeholder = currentLanguage === 'es' ? 'Buscar artículos o tags...' : 'Search articles or tags...';
+}
+
+function updatePostTitles() {
+  const posts = document.querySelectorAll('.post-item');
+  posts.forEach(post => {
+    const titleLink = post.querySelector('a');
+    if (titleLink) {
+      const spanishTitle = post.dataset.title;
+      const englishTitle = post.dataset.englishTitle;
+      titleLink.textContent = currentLanguage === 'es' ? spanishTitle : englishTitle;
+    }
+  });
+}
+
+function filterPosts(query) {
   const posts = document.querySelectorAll('.post-item');
   const yearSections = document.querySelectorAll('.year-section');
+  query = query.toLowerCase();
 
-  searchInput.addEventListener('input', function () {
-    const query = this.value.toLowerCase();
+  posts.forEach(post => {
+    const title = currentLanguage === 'es' ? 
+      post.dataset.title : 
+      post.dataset.englishTitle;
+    const tags = post.dataset.tags || '';
+    
+    const titleMatch = title.toLowerCase().includes(query);
+    const tagMatch = tags.toLowerCase().includes(query);
+    
+    post.classList.toggle('hidden', !(titleMatch || tagMatch));
+  });
 
-    posts.forEach(post => {
-      const content = post.textContent.toLowerCase();
-      post.classList.toggle('hidden', !content.includes(query));
-    });
+  yearSections.forEach(section => {
+    const visiblePosts = section.querySelectorAll('.post-item:not(.hidden)');
+    const yearHeading = section.querySelector('.year-heading');
+    const monthHeadings = section.querySelectorAll('.month-heading');
 
-    yearSections.forEach(section => {
-      const visiblePosts = section.querySelectorAll('.post-item:not(.hidden)');
-      const yearHeading = section.querySelector('.year-heading');
-      const monthHeadings = section.querySelectorAll('.month-heading');
+    if (visiblePosts.length > 0) {
+      yearHeading.style.display = '';
+    } else {
+      yearHeading.style.display = 'none';
+    }
 
-      // Mostrar/ocultar secciones de año
-      if (visiblePosts.length > 0) {
-        yearHeading.style.display = '';
-      } else {
-        yearHeading.style.display = 'none';
-      }
-
-      // Mostrar/ocultar secciones de mes
-      monthHeadings.forEach(month => {
-        let sibling = month.nextElementSibling;
-        let visible = false;
-        while (sibling && sibling.classList.contains('post-item')) {
-          if (!sibling.classList.contains('hidden')) {
-            visible = true;
-          }
-          sibling = sibling.nextElementSibling;
+    monthHeadings.forEach(month => {
+      let sibling = month.nextElementSibling;
+      let visible = false;
+      while (sibling && sibling.classList.contains('post-item')) {
+        if (!sibling.classList.contains('hidden')) {
+          visible = true;
         }
-        month.style.display = visible ? '' : 'none';
-      });
+        sibling = sibling.nextElementSibling;
+      }
+      month.style.display = visible ? '' : 'none';
     });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('searchInput');
+
+  // Initialize language
+  updateLanguageUI();
+  updatePostTitles();
+  updateSearchPlaceholder();
+
+  // Set up event listeners
+  searchInput.addEventListener('input', function() {
+    filterPosts(this.value);
   });
 });
 </script>

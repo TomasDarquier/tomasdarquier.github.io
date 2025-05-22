@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GitHub Pages Setup Guide
+english-title: Peru 2020
 category: note
 tags: deployment
 ---

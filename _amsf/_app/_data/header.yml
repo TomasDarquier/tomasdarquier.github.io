@@ -1,11 +1,11 @@
 - title: __home__
   url:   /
 
-- title: About
-  url:   /about/
+#- title: About
+#  url:   /about/
 
-- title: CV
-  url:   /news/
+#- title: CV
+#url:   /news/
 
-- title: Contact
-  url:   /test/
+#- title: Contact
+#url:   /test/
