@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>Tomas Darquier</title>
   <subtitle>Super-fast Jekyll framework</subtitle>
-  <updated>2025-05-21T15:30:25-07:00</updated>
+  <updated>2025-05-22T12:06:26-07:00</updated>
   <id>http://0.0.0.0:4321/</id>
   <generator uri="https://sparanoid.com/lab/amsf/" version="2.0.24">Almace Scaffolding</generator>
 
@@ -2572,7 +2572,7 @@ css: |
         <published>2014-01-01T00:00:00-08:00</published>
 
         
-          <updated>2025-05-21T09:47:12-07:00</updated>
+          <updated>2025-05-22T12:03:09-07:00</updated>
         
 
         <author>

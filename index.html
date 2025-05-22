@@ -102,21 +102,15 @@
     <li class=current>
         <a href="/">Tomas Darquier</a>
       </li>
-    <li >
-        <a href="/about/">About</a>
-      </li>
-    <li >
-        <a href="/news/">CV</a>
-      </li>
-    <li >
-        <a href="/test/">Contact</a>
-      </li>
     
   </ul>
 </nav>
 <!-- Main content wrap -->
 <main class="content " role=main>
-  <!-- Article wrapper, limit width -->
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!-- Article wrapper, limit width -->
 <article>
   <!-- Post title -->
   <header>
@@ -125,9 +119,12 @@
       <img src="/assets/svg/amsf.svg">
     </h1>
 
-    <h2 class="sub-title">Informática, Informatik, Informatique, Информатика, 信息技术</h2>
+    <h2 class="sub-title">Informática, Informatik, Informatique, Информатика, 信息技术   <i class="fa fa-heart" style="font-size:36px;color:red"></i></h2>
 
-    <small>Tomas Darquier's Blog &#x30FB; </b>check it on <a href="https://github.com/TomasDarquier/tomasdarquier.github.io">GitHub</a></small>
+    <small>Tomas Darquier's Blog &#x30FB; </b>check the <a href="https://github.com/TomasDarquier/tomasdarquier.github.io">repo</a></small>
+    <small><a href="https://github.com/TomasDarquier/tomasdarquier.github.io">Linkedin</a>
+        - </b><a href="https://github.com/TomasDarquier/tomasdarquier.github.io">GitHub</a>
+        - </b><a href="https://github.com/TomasDarquier/tomasdarquier.github.io">About Me</a></small> 
   </header>
 
 <div class="blog-header-container">
@@ -139,10 +136,13 @@
           d="M9.5 3a6.5 6.5 0 015.196 10.436l4.59 4.59a1 1 0 01-1.414 1.414l-4.59-4.59A6.5 6.5 0 119.5 3zm0 2a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
       </svg>
     </button>
-    <input type="text" id="searchInput" class="search-input collapsed" placeholder="Buscar artículos...">
+    <input type="text" id="searchInput" class="search-input collapsed" placeholder="Search articles or tags...">
+    <div class="language-selector">
+      <button id="languageEN" class="language-button active" onclick="setLanguage('en')">EN</button>
+      <button id="languageES" class="language-button" onclick="setLanguage('es')">ES</button>
+    </div>
   </div>
 </div>
-
 
   <div class="page-content" id="blogContainer">
     
@@ -157,7 +157,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">May</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="A Ver Como Queda Esto" data-english-title="" data-tags="deployment dev-ops linux "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -192,7 +192,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">April</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="GitHub Pages Setup Guide" data-english-title="" data-tags="deployment "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -231,7 +231,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">July</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Upgrading Guide from v1 to v2" data-english-title="" data-tags=""><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -264,7 +264,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">January</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Upgrading Guide: v1.1.0" data-english-title="" data-tags=""><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -284,7 +284,7 @@
 
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Open Graph" data-english-title="" data-tags="curtana "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -323,7 +323,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">November</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Jekyll Theme Compatibility" data-english-title="" data-tags=""><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -348,7 +348,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">June</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Introducing Curtana" data-english-title="" data-tags="curtana "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -379,7 +379,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">March</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Deployment Methods" data-english-title="" data-tags="deployment "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -418,7 +418,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">August</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Multiple Themes Support" data-english-title="" data-tags=""><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -451,7 +451,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">June</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Welcome" data-english-title="" data-tags="getting-started "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -477,7 +477,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Getting Started" data-english-title="" data-tags="getting-started "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -503,7 +503,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Customizing Styles" data-english-title="" data-tags="customization "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -529,7 +529,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Configuration" data-english-title="" data-tags="getting-started "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -555,7 +555,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Themes" data-english-title="" data-tags="customization "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -581,7 +581,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Creating Your Own Theme" data-english-title="" data-tags="customization "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -607,7 +607,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Syntax Highlighting" data-english-title="" data-tags="miscellaneous "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -633,7 +633,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Markdown Features Test" data-english-title="" data-tags="miscellaneous "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -659,7 +659,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Markup Example" data-english-title="" data-tags="miscellaneous "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -685,7 +685,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Custom HTML Markups" data-english-title="" data-tags="curtana "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -716,7 +716,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">May</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Custom Color Scheme" data-english-title="" data-tags="curtana "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -747,7 +747,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">April</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Unique Post Styling via Custom CSS" data-english-title="" data-tags="curtana "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -778,7 +778,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">February</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="SVG Post Title" data-english-title="" data-tags=""><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -798,7 +798,7 @@
 
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="External Link Post" data-english-title="" data-tags="curtana "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -826,7 +826,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Custom Heading Image" data-english-title="" data-tags="curtana "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -852,7 +852,7 @@
               
             </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="Custom Heading Background" data-english-title="" data-tags="curtana "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -883,7 +883,7 @@
             <a href="#" style="text-decoration: none; color: inherit;">January</a>
           </div>
           
-            <div class="post-item"><!-- List snippets -->
+            <div class="post-item" data-title="GitHub Pages Setup Guide" data-english-title="Peru 2020" data-tags="deployment "><!-- List snippets -->
 
 <!-- Dynamic link color based on post color scheme -->
 
@@ -912,7 +912,7 @@
         
       </div>
     
-
+  </div>
 </article>
 
 <style>
@@ -950,8 +950,8 @@
 }
 
 .search-toggle-icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .search-input {
@@ -973,6 +973,33 @@
   padding: 0;
   border: none;
   pointer-events: none;
+}
+
+.language-selector {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.language-button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: hsl(var(--text-color-h), var(--text-color-s), var(--text-color-l));
+  background-color: hsl(var(--bg-color-h), var(--bg-color-s), var(--bg-color-l));
+  font-size: 0.9em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.language-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.language-button.active {
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
 }
 
 .post-tags {
@@ -1023,7 +1050,7 @@
 
 .post-item a {
   font-weight: 500;
-  color: white;
+  color: --text-color;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1083,7 +1110,10 @@
 </style>
 
 <script>
-    function toggleSearch() {
+// Set English as the default language
+let currentLanguage = localStorage.getItem('blogLanguage') || 'en';
+
+function toggleSearch() {
   const input = document.getElementById('searchInput');
   input.classList.toggle('collapsed');
   if (!input.classList.contains('collapsed')) {
@@ -1091,44 +1121,100 @@
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+function setLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('blogLanguage', currentLanguage);
+  updateLanguageUI();
+  updatePostTitles();
+  updateSearchPlaceholder();
+  // Re-run search to update results in new language
   const searchInput = document.getElementById('searchInput');
+  filterPosts(searchInput.value);
+}
+
+function updateLanguageUI() {
+  const enButton = document.getElementById('languageEN');
+  const esButton = document.getElementById('languageES');
+  
+  if (currentLanguage === 'en') {
+    enButton.classList.add('active');
+    esButton.classList.remove('active');
+  } else {
+    enButton.classList.remove('active');
+    esButton.classList.add('active');
+  }
+}
+
+function updateSearchPlaceholder() {
+  const searchInput = document.getElementById('searchInput');
+  searchInput.placeholder = currentLanguage === 'es' ? 'Buscar artículos o tags...' : 'Search articles or tags...';
+}
+
+function updatePostTitles() {
+  const posts = document.querySelectorAll('.post-item');
+  posts.forEach(post => {
+    const titleLink = post.querySelector('a');
+    if (titleLink) {
+      const spanishTitle = post.dataset.title;
+      const englishTitle = post.dataset.englishTitle;
+      titleLink.textContent = currentLanguage === 'es' ? spanishTitle : englishTitle;
+    }
+  });
+}
+
+function filterPosts(query) {
   const posts = document.querySelectorAll('.post-item');
   const yearSections = document.querySelectorAll('.year-section');
+  query = query.toLowerCase();
 
-  searchInput.addEventListener('input', function () {
-    const query = this.value.toLowerCase();
+  posts.forEach(post => {
+    const title = currentLanguage === 'es' ? 
+      post.dataset.title : 
+      post.dataset.englishTitle;
+    const tags = post.dataset.tags || '';
+    
+    const titleMatch = title.toLowerCase().includes(query);
+    const tagMatch = tags.toLowerCase().includes(query);
+    
+    post.classList.toggle('hidden', !(titleMatch || tagMatch));
+  });
 
-    posts.forEach(post => {
-      const content = post.textContent.toLowerCase();
-      post.classList.toggle('hidden', !content.includes(query));
-    });
+  yearSections.forEach(section => {
+    const visiblePosts = section.querySelectorAll('.post-item:not(.hidden)');
+    const yearHeading = section.querySelector('.year-heading');
+    const monthHeadings = section.querySelectorAll('.month-heading');
 
-    yearSections.forEach(section => {
-      const visiblePosts = section.querySelectorAll('.post-item:not(.hidden)');
-      const yearHeading = section.querySelector('.year-heading');
-      const monthHeadings = section.querySelectorAll('.month-heading');
+    if (visiblePosts.length > 0) {
+      yearHeading.style.display = '';
+    } else {
+      yearHeading.style.display = 'none';
+    }
 
-      // Mostrar/ocultar secciones de año
-      if (visiblePosts.length > 0) {
-        yearHeading.style.display = '';
-      } else {
-        yearHeading.style.display = 'none';
-      }
-
-      // Mostrar/ocultar secciones de mes
-      monthHeadings.forEach(month => {
-        let sibling = month.nextElementSibling;
-        let visible = false;
-        while (sibling && sibling.classList.contains('post-item')) {
-          if (!sibling.classList.contains('hidden')) {
-            visible = true;
-          }
-          sibling = sibling.nextElementSibling;
+    monthHeadings.forEach(month => {
+      let sibling = month.nextElementSibling;
+      let visible = false;
+      while (sibling && sibling.classList.contains('post-item')) {
+        if (!sibling.classList.contains('hidden')) {
+          visible = true;
         }
-        month.style.display = visible ? '' : 'none';
-      });
+        sibling = sibling.nextElementSibling;
+      }
+      month.style.display = visible ? '' : 'none';
     });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('searchInput');
+
+  // Initialize language
+  updateLanguageUI();
+  updatePostTitles();
+  updateSearchPlaceholder();
+
+  // Set up event listeners
+  searchInput.addEventListener('input', function() {
+    filterPosts(this.value);
   });
 });
 </script>
