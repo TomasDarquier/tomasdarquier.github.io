@@ -1,5 +1,9 @@
-- title: __home__
-  url:   /
+#- title: __home__
+#  url:   /
+#- title: <img src="mate_500_500.png" width="100" height="100" alt="Logo de AMSF">
+# url:   /
+#
+- title: "<a href='/' style='display:inline-block;width:60px;height:74px;background:gray;mask-image:url(mate_500_500.png);-webkit-mask-image:url(mate_500_500.png);mask-repeat:no-repeat;mask-size:cover;background-repeat:no-repeat;background-size:cover;line-height:0;position:relative;top:9px;'></a>"
 
 #- title: About
 #  url:   /about/

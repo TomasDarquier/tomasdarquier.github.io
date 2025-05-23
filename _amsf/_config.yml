@@ -82,14 +82,14 @@ name:           Tomas Darquier
 # - name_short: Sparanoid
 #
 # Default:      AMSF
-name_short:     TDar
+name_short:     TDAR
 
 # Site description
 #
 # Will be used in the document meta and Atom feed subtitle
 #
 # Default:      Super-fast Jekyll framework
-description:    Super-fast Jekyll framework
+description:    Tomas Darquier's Blog
 
 # Base URL
 #
@@ -129,7 +129,7 @@ feed:           /feed.xml
 # URLs for these fields
 #
 # Default:      https://sparanoid.com
-url:            https://sparanoid.com
+url:            https://tomasdarquier.github.io
 
 # Media assets URL
 #
@@ -176,7 +176,7 @@ google_analytics:
   url:          https://www.google-analytics.com/analytics.js
 
 # Site Twitter account handle
-twitter:        sparanoid
+twitter:        tomasdarquier
 
 # Twitter Cards large images
 #
