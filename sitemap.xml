@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://0.0.0.0:4321/</loc>
-    <lastmod>2025-05-23</lastmod>
+    <lastmod>2025-05-26</lastmod>
   </url>
 
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/about/</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
   
     
   
@@ -31,15 +22,6 @@
   
     
       <url>
-        <loc>http://0.0.0.0:4321/news/</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
         <loc>http://0.0.0.0:4321/test/</loc>
         
           <lastmod>2025-05-21</lastmod>
@@ -51,227 +33,18 @@
   
     
       <url>
-        <loc>http://0.0.0.0:4321/a-ver-que-tul.html</loc>
+        <loc>http://0.0.0.0:4321/sobre-mi.html</loc>
         
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/test-magico.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
+          <lastmod>2025-05-26</lastmod>
         
       </url>
     
   
     
       <url>
-        <loc>http://0.0.0.0:4321/upgrading-from-v1-to-v2.html</loc>
+        <loc>http://0.0.0.0:4321/about-me.html</loc>
         
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/upgrading-guide-v1.1.0.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/open-graph.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/jekyll-theme-compatibility.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/theme-curtana.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/deployment-methods.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/multiple-themes-support.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/welcome.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/getting-started.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/customizing-styles.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/configuration.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/themes.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/creating-themes.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/syntax-highlighting.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/markdown-features-test.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/markup-example.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/custom-html-markups.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/custom-color-scheme.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/custom-css.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/external-link-post.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/custom-heading-image.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/custom-heading-background.html</loc>
-        
-          <lastmod>2025-05-21</lastmod>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://0.0.0.0:4321/github-pages-setup.html</loc>
-        
-          <lastmod>2025-05-22</lastmod>
+          <lastmod>2025-05-26</lastmod>
         
       </url>
     

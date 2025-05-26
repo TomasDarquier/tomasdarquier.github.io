@@ -7,10 +7,10 @@
 # {{ author.web }}: used in atom feed
 # {{ author.twitter }}: used by Twitter Cards
 default:
-  name:         Sparanoid
-  email:        t@sparanoid.com
-  web:          https://sparanoid.com/
-  twitter:      tunghsiao
+  name:         Tomas Darquier
+  email:        tomasdarquier@gmail.com
+  web:          https://tomasdarquier.github.io/
+  #twitter:      tunghsiao
 
 tester:
   name:         Tester

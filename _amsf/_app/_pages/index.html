@@ -18,14 +18,12 @@ thumb_force_logo: true
     </h1>
 
     <h2 class="sub-title">Informática, Informatik, Informatique, Информатика, 信息技术   <i class="fa fa-heart" style="font-size:36px;color:red"></i></h2>
-
-    <small>Tomas Darquier's Blog &#x30FB; </b>check the <a href="https://github.com/TomasDarquier/tomasdarquier.github.io">repo</a></small>
+    <small>Tomas Darquier's Blog &#x30FB;</b>check the <a href="https://github.com/TomasDarquier/tomasdarquier.github.io">repo</a></small>
     <small style="display: inline-flex; align-items: center;">
   <a href="https://www.linkedin.com/in/tomasdarquier/">Linkedin</a>
   <a style="margin-left: 20px;" href="https://github.com/TomasDarquier">GitHub</a>
-  <a style="margin-left: 20px;" href="https://github.com/TomasDarquier/tomasdarquier.github.io">About Me</a>
-  <img src="arg-flag.png" alt="Argentina" style="height: 16px; width: auto; margin-left: 8px; position: relative; top: 16px;">
-
+  <a style="margin-left: 20px;" href="/about-me.html">About Me</a> (
+  <a href="/sobre-mi.html" style="font-size: 0.8em;">Sobre Mí</a>)
 </small>
 
   </header>
@@ -60,7 +58,7 @@ thumb_force_logo: true
             <a style="text-decoration: none; color: inherit;">{{ month.name }}</a>
           </div>
           {% for post in month.items %}
-            <div class="post-item" data-title="{{ post.title }}" data-english-title="{{ post.english-title }}" data-tags="{% for tag in post.tags %}{{ tag | downcase }} {% endfor %}">
+            <div class="post-item" data-title="{{ post.title }}" data-spanish-title="{{ post.spanish-title }}" data-english-title="{{ post.english-title }}" data-tags="{% for tag in post.tags %}{{ tag | downcase }} {% endfor %}">
               {%- include themes/{{ site.amsf_theme }}/includes/page-item.html -%}
               {% if post.tags.size > 0 %}
               <span class="post-tags">
@@ -79,7 +77,7 @@ thumb_force_logo: true
 
 <style>
 a.year:hover {
-  text-decoration: none; /* Esto previene el subrayado en hover */
+  text-decoration: none;
 }
 .blog-header-container {
   display: flex;
@@ -278,7 +276,6 @@ a.year:hover {
 </style>
 
 <script>
-// Set English as the default language
 let currentLanguage = localStorage.getItem('blogLanguage') || 'en';
 
 function toggleSearch() {
@@ -293,9 +290,8 @@ function setLanguage(lang) {
   currentLanguage = lang;
   localStorage.setItem('blogLanguage', currentLanguage);
   updateLanguageUI();
-  updatePostTitles();
+  updatePostVisibility();
   updateSearchPlaceholder();
-  // Re-run search to update results in new language
   const searchInput = document.getElementById('searchInput');
   filterPosts(searchInput.value);
 }
@@ -318,69 +314,92 @@ function updateSearchPlaceholder() {
   searchInput.placeholder = currentLanguage === 'es' ? 'Buscar artículos o tags...' : 'Search articles or tags...';
 }
 
-function updatePostTitles() {
+function updatePostVisibility() {
   const posts = document.querySelectorAll('.post-item');
   posts.forEach(post => {
-    const titleLink = post.querySelector('a');
-    if (titleLink) {
-      const spanishTitle = post.dataset.title;
-      const englishTitle = post.dataset.englishTitle;
-      titleLink.textContent = currentLanguage === 'es' ? spanishTitle : englishTitle;
+    const spanishTitle = post.dataset.spanishTitle;
+    const englishTitle = post.dataset.englishTitle;
+    
+    if (currentLanguage === 'en') {
+      // En inglés, mostrar solo si tiene english-title
+      post.classList.toggle('hidden', !englishTitle || englishTitle.trim() === '');
+      if (!post.classList.contains('hidden')) {
+        const titleLink = post.querySelector('a');
+        if (titleLink) titleLink.textContent = englishTitle;
+      }
+    } else {
+      // En español, mostrar solo si tiene spanish-title
+      post.classList.toggle('hidden', !spanishTitle || spanishTitle.trim() === '');
+      if (!post.classList.contains('hidden')) {
+        const titleLink = post.querySelector('a');
+        if (titleLink) titleLink.textContent = spanishTitle;
+      }
     }
   });
+  
+  updateSectionVisibility();
 }
 
-function filterPosts(query) {
-  const posts = document.querySelectorAll('.post-item');
+function updateSectionVisibility() {
   const yearSections = document.querySelectorAll('.year-section');
-  query = query.toLowerCase();
-
-  posts.forEach(post => {
-    const title = currentLanguage === 'es' ? 
-      post.dataset.title : 
-      post.dataset.englishTitle;
-    const tags = post.dataset.tags || '';
-    
-    const titleMatch = title.toLowerCase().includes(query);
-    const tagMatch = tags.toLowerCase().includes(query);
-    
-    post.classList.toggle('hidden', !(titleMatch || tagMatch));
-  });
-
+  
   yearSections.forEach(section => {
     const visiblePosts = section.querySelectorAll('.post-item:not(.hidden)');
     const yearHeading = section.querySelector('.year-heading');
     const monthHeadings = section.querySelectorAll('.month-heading');
-
-    if (visiblePosts.length > 0) {
-      yearHeading.style.display = '';
-    } else {
-      yearHeading.style.display = 'none';
+    
+    section.style.display = visiblePosts.length > 0 ? '' : 'none';
+    if (yearHeading) {
+      yearHeading.style.display = visiblePosts.length > 0 ? '' : 'none';
     }
-
+    
     monthHeadings.forEach(month => {
       let sibling = month.nextElementSibling;
-      let visible = false;
-      while (sibling && sibling.classList.contains('post-item')) {
-        if (!sibling.classList.contains('hidden')) {
-          visible = true;
+      let hasVisiblePosts = false;
+      
+      while (sibling && !sibling.classList.contains('month-heading')) {
+        if (sibling.classList.contains('post-item') && !sibling.classList.contains('hidden')) {
+          hasVisiblePosts = true;
+          break;
         }
         sibling = sibling.nextElementSibling;
       }
-      month.style.display = visible ? '' : 'none';
+      
+      month.style.display = hasVisiblePosts ? '' : 'none';
     });
   });
 }
 
+function filterPosts(query) {
+  query = query.toLowerCase();
+  const posts = document.querySelectorAll('.post-item');
+  
+  posts.forEach(post => {
+    if (post.classList.contains('hidden')) {
+      return;
+    }
+    
+    const title = currentLanguage === 'es' ? 
+      post.dataset.spanishTitle : 
+      post.dataset.englishTitle;
+    const tags = post.dataset.tags || '';
+    
+    const titleMatch = title && title.toLowerCase().includes(query);
+    const tagMatch = tags.toLowerCase().includes(query);
+    
+    post.classList.toggle('hidden', !(titleMatch || tagMatch));
+  });
+  
+  updateSectionVisibility();
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('searchInput');
-
-  // Initialize language
+  
   updateLanguageUI();
-  updatePostTitles();
+  updatePostVisibility();
   updateSearchPlaceholder();
-
-  // Set up event listeners
+  
   searchInput.addEventListener('input', function() {
     filterPosts(this.value);
   });
